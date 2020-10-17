@@ -55,7 +55,7 @@ func (v *VLive) Recents() ([]*Video, error) {
 		video.ChannelId = strings.TrimPrefix(video.ChannelId, "/channels/")
 
 		// get live thumbnail if no thumbnail in html
-		if video.Thumbnail == "" && video.Type == "LIVE" { // TODO: TYPE FOR LIVE
+		if video.Thumbnail == "" && video.Type == VideoTypeLive {
 			video.Thumbnail = fmt.Sprintf("https://vlive-thumb.pstatic.net/live/%s/thumb?type=f228_128", video.Seq)
 		}
 
